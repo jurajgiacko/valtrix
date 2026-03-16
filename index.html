@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALTRIX — CEE Sports Distribution Platform</title>
+  <meta name="description" content="VALTRIX helps Western sports brands succeed in Central & Eastern Europe. One partner, entire region.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #0f1424;
+      --bg-card: #141a2e;
+      --bg-card-hover: #1a2240;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #06b6d4;
+      --accent-light: #22d3ee;
+      --accent-glow: rgba(6, 182, 212, 0.15);
+      --accent-glow-strong: rgba(6, 182, 212, 0.3);
+      --border: rgba(148, 163, 184, 0.08);
+      --border-accent: rgba(6, 182, 212, 0.2);
+      --gradient-accent: linear-gradient(135deg, #06b6d4, #0891b2);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 2rem;
+      transition: var(--transition);
+      background: transparent;
+    }
+    nav.scrolled {
+      background: rgba(10, 14, 26, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--gradient-accent) !important;
+      color: var(--bg-primary) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 5px 0;
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    /* SECTIONS */
+    section { padding: 7rem 2rem; position: relative; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=1920&q=80&auto=format') center/cover no-repeat;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 780px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      margin-bottom: 2rem;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient-accent);
+      color: var(--bg-primary);
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(6, 182, 212, 0.3); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .btn-secondary:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+    /* CAPABILITIES */
+    .capabilities { background: var(--bg-secondary); }
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .cap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.75rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .cap-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-accent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .cap-card:hover { border-color: var(--border-accent); transform: translateY(-4px); }
+    .cap-card:hover::before { opacity: 1; }
+    .cap-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-glow);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .cap-icon svg { width: 24px; height: 24px; color: var(--accent); }
+    .cap-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .cap-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* BRANDS */
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .brand-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .brand-card:hover { border-color: var(--border-accent); }
+    .brand-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .brand-card.cta-card {
+      border-style: dashed;
+      border-color: var(--border-accent);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-card.cta-card .brand-logo { color: var(--accent); font-size: 1.25rem; }
+    .brand-card.cta-card .brand-tag { color: var(--text-secondary); }
+    .plus-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .plus-icon svg { width: 24px; height: 24px; color: var(--accent); }
+
+    /* COVERAGE */
+    .coverage { background: var(--bg-secondary); }
+    .coverage-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3.5rem;
+    }
+    .map-visual {
+      position: relative;
+      aspect-ratio: 1;
+      max-width: 480px;
+    }
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 8px;
+      width: 100%;
+      height: 100%;
+    }
+    .map-cell {
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+    .map-active {
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .map-active .country-code {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 2px;
+    }
+    .map-active.primary {
+      background: var(--accent-glow-strong);
+      border-color: var(--accent);
+    }
+    .map-expanding {
+      background: var(--bg-card);
+      border: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-expanding .country-code {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+    }
+    .coverage-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .coverage-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .coverage-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .coverage-list li .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .dot-active { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+    .dot-expanding { background: var(--text-muted); }
+
+    /* NUMBERS */
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .number-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+    }
+    .number-card:hover { border-color: var(--border-accent); }
+    .number-value {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .number-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* WHY */
+    .why { background: var(--bg-secondary); }
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3.5rem;
+    }
+    .why-text p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .why-text p:last-child { margin-bottom: 0; }
+    .why-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .why-feature {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+    .why-feature:hover { border-color: var(--border-accent); }
+    .why-feature h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .why-feature p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3.5rem;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group textarea {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-muted); }
+    .contact-info { padding-top: 0.5rem; }
+    .contact-info p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    .contact-link:hover { color: var(--accent-light); }
+    .contact-link-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-glow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-link-icon svg { width: 18px; height: 18px; color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-primary);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    /* ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .cap-grid { grid-template-columns: repeat(2, 1fr); }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .coverage-layout { grid-template-columns: 1fr; }
+      .map-visual { max-width: 360px; margin: 0 auto; }
+      .why-layout { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 5rem 1.25rem; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 14, 26, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 1.5rem 2rem 2rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .mobile-toggle { display: block; }
+      .cap-grid { grid-template-columns: 1fr; }
+      .brands-grid { grid-template-columns: 1fr 1fr; }
+      .numbers-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.25rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary { text-align: center; justify-content: center; }
+      .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .brands-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">VALTR<span>IX</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#capabilities">What we do</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#coverage">Coverage</a></li>
+        <li><a href="#why">Why us</a></li>
+        <li><a href="#contact" class="nav-cta">Partner with us</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">CEE Sports Distribution Platform</div>
+        <h1>We help sports brands <em>win in Central & Eastern Europe</em></h1>
+        <p>Your brands. Our region. — One partner for B2B distribution, e-commerce, marketing, and events across CZ, SK, and beyond. Plug & play market entry.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            Partner with us
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#capabilities" class="btn-secondary">See what we do</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="capabilities" id="capabilities">
+    <div class="container">
+      <span class="section-label reveal">What we do</span>
+      <h2 class="section-title reveal">Full-stack distribution<br>for sports brands</h2>
+      <p class="section-subtitle reveal">Everything a brand needs to enter and grow in CEE — from warehouse to checkout to social feed.</p>
+      <div class="cap-grid">
+        <div class="cap-card reveal reveal-delay-0">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.29 7 12 12 20.71 7"/>
+              <line x1="12" y1="22" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3>B2B Distribution</h3>
+          <p>150+ retail partners across CZ & SK. Established relationships with sports retailers, specialty stores, and chains. Logistics handled.</p>
+        </div>
+        <div class="cap-card reveal reveal-delay-1">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <h3>E-commerce</h3>
+          <p>Own branded e-shops with localized UX, payment gateways, and customer support. Direct-to-consumer infrastructure ready to launch.</p>
+        </div>
+        <div class="cap-card reveal reveal-delay-2">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+            </svg>
+          </div>
+          <h3>Marketing Hub</h3>
+          <p>Localized campaigns, social media management, influencer partnerships, and content creation. Your brand story, told in the local language.</p>
+        </div>
+        <div class="cap-card reveal reveal-delay-3">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3>Events Infrastructure</h3>
+          <p>Own sports events (JIZ50, Road Classics) with built-in brand activation, sampling, and community engagement. Direct access to athletes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="brands" id="brands">
+    <div class="container">
+      <span class="section-label reveal">Portfolio</span>
+      <h2 class="section-title reveal">Brands that trust us</h2>
+      <p class="section-subtitle reveal">We operate as the exclusive CEE partner for premium sports brands.</p>
+      <div class="brands-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="brand-card reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="margin-bottom: 16px; height: 50px; display: flex; align-items: center;">
+            <img src="enervit-logo-white.svg" alt="Enervit" style="height: 44px; width: auto; opacity: 0.95;">
+          </div>
+          <div class="brand-tag">Sports Nutrition · CZ/SK</div>
+        </div>
+        <div class="brand-card reveal reveal-delay-1" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="margin-bottom: 16px; height: 50px; display: flex; align-items: center;">
+            <img src="logo-royalbay.png" alt="Royal Bay" style="height: 40px; width: auto; filter: brightness(0) invert(1); opacity: 0.9;">
+          </div>
+          <div class="brand-tag">Compression Wear · CZ/SK</div>
+        </div>
+        <div class="brand-card cta-card reveal reveal-delay-2">
+          <div class="plus-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="brand-logo">Your brand?</div>
+          <div class="brand-tag">Let's talk about CEE expansion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="coverage" id="coverage">
+    <div class="container">
+      <span class="section-label reveal">Coverage</span>
+      <h2 class="section-title reveal">Central & Eastern Europe,<br>market by market</h2>
+      <p class="section-subtitle reveal">Active in CZ & SK, expanding into Hungary and Southeast Europe.</p>
+      <div class="coverage-layout">
+        <div class="map-visual reveal">
+          <div class="map-grid" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr);">
+            <div class="map-cell"></div>
+            <div class="map-cell map-active primary"><span class="country-code">CZ</span></div>
+            <div class="map-cell map-active primary"><span class="country-code">SK</span></div>
+            <div class="map-cell map-expanding"><span class="country-code">HU</span></div>
+            <div class="map-cell"></div>
+            <div class="map-cell map-expanding"><span class="country-code">HR</span></div>
+            <div class="map-cell map-expanding"><span class="country-code">RS</span></div>
+            <div class="map-cell map-expanding"><span class="country-code">RO</span></div>
+            <div class="map-cell"></div>
+            <div class="map-cell"></div>
+            <div class="map-cell map-expanding"><span class="country-code">BG</span></div>
+            <div class="map-cell"></div>
+          </div>
+        </div>
+        <div class="coverage-info reveal reveal-delay-1">
+          <ul class="coverage-list">
+            <li>
+              <span class="dot dot-active"></span>
+              <div>
+                <strong style="color: var(--text-primary);">Czech Republic</strong> — Full operations. B2B network, e-commerce, marketing, events. 8+ years of market presence.
+              </div>
+            </li>
+            <li>
+              <span class="dot dot-active"></span>
+              <div>
+                <strong style="color: var(--text-primary);">Slovakia</strong> — Active B2B distribution and growing e-commerce presence. Cross-border synergies with CZ.
+              </div>
+            </li>
+            <li>
+              <span class="dot dot-expanding"></span>
+              <div>
+                <strong style="color: var(--text-primary);">Hungary</strong> — Near-ready. Strong endurance sports culture, natural extension from SK operations.
+              </div>
+            </li>
+            <li>
+              <span class="dot dot-expanding"></span>
+              <div>
+                <strong style="color: var(--text-primary);">Romania</strong> — Expansion target H2 2026. Growing premium sports segment with strong outdoor & endurance culture.
+              </div>
+            </li>
+            <li>
+              <span class="dot dot-expanding"></span>
+              <div>
+                <strong style="color: var(--text-primary);">Bulgaria, Serbia, Croatia</strong> — Expansion 2026–27. Strategic entry into Southeast Europe with rising demand for premium sports brands.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPANSION SPEED -->
+  <section class="numbers" id="expansion" style="padding-bottom: 3rem;">
+    <div class="container">
+      <span class="section-label reveal">Expansion speed</span>
+      <h2 class="section-title reveal">New market? <em style="font-style: normal; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Weeks, not years.</em></h2>
+      <p class="section-subtitle reveal">Our infrastructure is built once and replicated. Shopify clone + localization + local logistics = immediate market entry.</p>
+
+      <div style="margin-top: 3rem; overflow-x: auto;" class="reveal">
+        <div style="display: grid; grid-template-columns: 140px repeat(7, 1fr); gap: 8px; min-width: 800px; font-size: 0.85rem;">
+          <div style="padding: 10px; font-weight: 700; color: var(--text-muted);"></div>
+          <div style="padding: 10px; text-align: center; font-weight: 700; color: var(--text-secondary);">CZ</div>
+          <div style="padding: 10px; text-align: center; font-weight: 700; color: var(--text-secondary);">SK</div>
+          <div style="padding: 10px; text-align: center; font-weight: 700; color: var(--text-secondary);">HU</div>
+          <div style="padding: 10px; text-align: center; font-weight: 700; color: var(--text-secondary);">RO</div>
+          <div style="padding: 10px; text-align: center; font-weight: 700; color: var(--text-secondary);">BG</div>
+          <div style="padding: 10px; text-align: center; font-weight: 700; color: var(--text-secondary);">RS</div>
+          <div style="padding: 10px; text-align: center; font-weight: 700; color: var(--text-secondary);">HR</div>
+
+          <div style="padding: 10px; font-weight: 700; color: var(--text-primary);">Enervit</div>
+          <div style="padding: 10px; text-align: center; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; color: #34d399; font-weight: 700;">Live</div>
+          <div style="padding: 10px; text-align: center; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; color: #34d399; font-weight: 700;">Live</div>
+          <div style="padding: 10px; text-align: center; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; color: #f59e0b; font-weight: 700;">⚡ Ready</div>
+          <div style="padding: 10px; text-align: center; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; color: #f59e0b; font-weight: 700;">⚡ Ready</div>
+          <div style="padding: 10px; text-align: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted);">2027</div>
+          <div style="padding: 10px; text-align: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted);">2027</div>
+          <div style="padding: 10px; text-align: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted);">2027</div>
+
+          <div style="padding: 10px; font-weight: 700; color: var(--text-primary);">Royal Bay</div>
+          <div style="padding: 10px; text-align: center; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; color: #34d399; font-weight: 700;">Live</div>
+          <div style="padding: 10px; text-align: center; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; color: #34d399; font-weight: 700;">Live</div>
+          <div style="padding: 10px; text-align: center; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; color: #f59e0b; font-weight: 700;">⚡ Ready</div>
+          <div style="padding: 10px; text-align: center; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; color: #f59e0b; font-weight: 700;">⚡ Ready</div>
+          <div style="padding: 10px; text-align: center; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; color: #f59e0b; font-weight: 700;">⚡ Ready</div>
+          <div style="padding: 10px; text-align: center; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; color: #f59e0b; font-weight: 700;">⚡ Ready</div>
+          <div style="padding: 10px; text-align: center; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; color: #f59e0b; font-weight: 700;">⚡ Ready</div>
+
+          <div style="padding: 10px; font-weight: 600; color: var(--accent); font-style: italic;">Your brand</div>
+          <div style="padding: 10px; text-align: center; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 10px; color: var(--accent-light); font-weight: 700;">⚡</div>
+          <div style="padding: 10px; text-align: center; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 10px; color: var(--accent-light); font-weight: 700;">⚡</div>
+          <div style="padding: 10px; text-align: center; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 10px; color: var(--accent-light); font-weight: 700;">⚡</div>
+          <div style="padding: 10px; text-align: center; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 10px; color: var(--accent-light); font-weight: 700;">⚡</div>
+          <div style="padding: 10px; text-align: center; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 10px; color: var(--accent-light); font-weight: 700;">⚡</div>
+          <div style="padding: 10px; text-align: center; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 10px; color: var(--accent-light); font-weight: 700;">⚡</div>
+          <div style="padding: 10px; text-align: center; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 10px; color: var(--accent-light); font-weight: 700;">⚡</div>
+        </div>
+        <div style="display: flex; gap: 2rem; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap;">
+          <span><span style="color: #34d399;">●</span> Live — fully operational</span>
+          <span><span style="color: #f59e0b;">⚡</span> Ready — launch in 4-8 weeks (Shopify clone + localization)</span>
+          <span>2027 — planned entry</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="numbers" id="numbers">
+    <div class="container">
+      <span class="section-label reveal">Traction</span>
+      <h2 class="section-title reveal">Built on real numbers</h2>
+      <div class="numbers-grid">
+        <div class="number-card reveal">
+          <div class="number-value">150+</div>
+          <div class="number-label">B2B Partners</div>
+        </div>
+        <div class="number-card reveal reveal-delay-1">
+          <div class="number-value">7</div>
+          <div class="number-label">CEE Markets</div>
+        </div>
+        <div class="number-card reveal reveal-delay-2">
+          <div class="number-value">4</div>
+          <div class="number-label">E-shops Live</div>
+        </div>
+        <div class="number-card reveal reveal-delay-3">
+          <div class="number-value">8+</div>
+          <div class="number-label">Years in Sports</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY VALTRIX -->
+  <section class="why" id="why">
+    <div class="container">
+      <span class="section-label reveal">Why Valtrix</span>
+      <h2 class="section-title reveal">One partner. Entire region.</h2>
+      <div class="why-layout">
+        <div class="why-text reveal">
+          <p>Entering CEE is complex. Fragmented retail, local regulations, language barriers, and different consumer behaviors in every market. Most brands either go it alone — slowly and expensively — or partner with local distributors who lack the full picture.</p>
+          <p>Valtrix is different. We're a platform, not just a distributor. We combine B2B distribution with D2C infrastructure, local marketing expertise, and on-the-ground event presence. One relationship gives you access to everything you need to succeed in the region.</p>
+          <p>We think like brand operators, not middlemen. Your success is our growth.</p>
+        </div>
+        <div class="why-features reveal reveal-delay-1">
+          <div class="why-feature">
+            <h4>Plug & Play Market Entry</h4>
+            <p>Skip 2-3 years of setup. Leverage our existing infrastructure, relationships, and local knowledge from day one.</p>
+          </div>
+          <div class="why-feature">
+            <h4>Omnichannel by Default</h4>
+            <p>B2B and B2C under one roof. Your brand is present in retail, online, and at live events — consistently.</p>
+          </div>
+          <div class="why-feature">
+            <h4>Data-Driven Operations</h4>
+            <p>Transparent reporting on sell-through, market trends, and campaign performance. No black boxes.</p>
+          </div>
+          <div class="why-feature">
+            <h4>Scalable Across Borders</h4>
+            <p>Start in CZ/SK, expand to RO, BG, RS, HR. Same partner, same standards, growing footprint.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section class="capabilities" id="track-record">
+    <div class="container">
+      <span class="section-label reveal">Track record</span>
+      <h2 class="section-title reveal">Proven operations.<br>Ready to scale.</h2>
+      <p class="section-subtitle reveal">We've built the playbook running real brands. Now we're opening it to new partners.</p>
+      <div class="cap-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 3.5rem;">
+        <div class="cap-card reveal">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <h3>Multi-shop E-commerce</h3>
+          <p>4 localized e-shops running on Shopify. Proven conversion funnels, payment integrations, and customer support across CZ & SK.</p>
+        </div>
+        <div class="cap-card reveal reveal-delay-1">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Dedicated Brand Teams</h3>
+          <p>Each brand gets a focused team — sales, marketing, events. Not a shared resource pool, but people who live your brand daily.</p>
+        </div>
+        <div class="cap-card reveal reveal-delay-2">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Data & Automation</h3>
+          <p>AI-powered workflows, BI dashboards, and automated reporting. You see exactly what's happening with your brand — in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <span class="section-label reveal">Get in touch</span>
+      <h2 class="section-title reveal">Let's explore the opportunity</h2>
+      <p class="section-subtitle reveal">Looking to expand into Central & Eastern Europe? We'd love to hear about your brand.</p>
+      <div class="contact-layout">
+        <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" placeholder="Brand Inc.">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john@brand.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us about your brand and what markets you're interested in..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: fit-content;">
+            Send message
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <div class="contact-info reveal reveal-delay-1">
+          <p>Whether you're a brand exploring CEE for the first time or looking to switch to a more integrated distribution partner — we're here to talk.</p>
+          <div class="contact-links">
+            <a href="mailto:hello@valtrix.com" class="contact-link">
+              <div class="contact-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              hello@valtrix.com
+            </a>
+            <a href="https://linkedin.com/company/valtrix" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Valtrix. All rights reserved.</div>
+      <div class="footer-tagline">Your brands. Our region.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Form handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = 'Sent! We\'ll be in touch.';
+      btn.style.opacity = '0.7';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
