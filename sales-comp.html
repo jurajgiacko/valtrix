@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Compensation 2026 — VITAR Sport</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --blue: #3b82f6;
+            --blue-light: #60a5fa;
+            --teal: #06b6d4;
+            --teal-light: #22d3ee;
+            --green: #10b981;
+            --green-light: #34d399;
+            --red: #ef4444;
+            --red-light: #f87171;
+            --amber: #f59e0b;
+            --white: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 48px 32px;
+        }
+        .header { text-align: center; margin-bottom: 56px; }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--blue-light), var(--teal-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header .sub { font-size: 14px; color: var(--gray-400); }
+        .section { margin-bottom: 48px; }
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+        .section-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .section-desc { font-size: 14px; color: var(--gray-400); margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th {
+            text-align: left;
+            padding: 10px 12px;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--teal);
+            border-bottom: 2px solid rgba(6,182,212,0.3);
+        }
+        td {
+            padding: 9px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: var(--gray-200);
+        }
+        tr:hover td { background: rgba(255,255,255,0.03); }
+        .highlight-row td { color: var(--white); font-weight: 600; background: rgba(59,130,246,0.06); }
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .card-green { border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.06); }
+        .card-blue { border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.06); }
+        .card-amber { border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.06); }
+        .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .badge-green { background: rgba(16,185,129,0.15); color: var(--green-light); }
+        .badge-red { background: rgba(239,68,68,0.15); color: var(--red-light); }
+        .badge-blue { background: rgba(59,130,246,0.15); color: var(--blue-light); }
+        .badge-amber { background: rgba(245,158,11,0.15); color: var(--amber); }
+        .vs-arrow {
+            text-align: center;
+            font-size: 24px;
+            color: var(--teal);
+            padding: 12px;
+        }
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 48px 0;
+        }
+        .big-number {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--blue-light), var(--teal-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .quote-block {
+            padding: 20px 24px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(6,182,212,0.05));
+            border-left: 4px solid var(--teal);
+            border-radius: 0 12px 12px 0;
+            font-size: 15px;
+            color: var(--gray-200);
+            margin: 16px 0;
+        }
+        .check-list { list-style: none; }
+        .check-list li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--gray-200);
+        }
+        .check-list li::before {
+            content: '✓';
+            color: var(--green-light);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .x-list li::before { content: '✗'; color: var(--red-light); }
+        .footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--gray-600); }
+        @media print {
+            body { background: white; color: #111; }
+            .card { border-color: #ddd; }
+            .gradient-text { -webkit-text-fill-color: #1e40af; }
+            th { color: #1e40af; }
+            td { color: #333; }
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .page { padding: 24px 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <h1>Nový odmeňovací model — Sales tím 2026</h1>
+        <div class="sub">VITAR Sport &nbsp;·&nbsp; Platný od Q2 2026 (apríl) &nbsp;·&nbsp; Všetci na FA</div>
+    </div>
+
+    <!-- ═══ 1. PREČO MENÍME ═══ -->
+    <div class="section">
+        <div class="section-label">Prečo meníme</div>
+        <div class="section-title">Starý model nefunguje</div>
+        <div class="grid-2">
+            <div class="card" style="border-color: rgba(239,68,68,0.2);">
+                <h3 style="color: var(--red-light);">❌ Starý model</h3>
+                <ul class="check-list x-list">
+                    <li>Bonus za vyfakturované — pohľadávky nikto nerieši</li>
+                    <li>Binárne: splníš 90% = bonus. 89% = nič. 130% = rovnaký bonus.</li>
+                    <li>Kvartálny bonus 500 CZK — nie je motivátor</li>
+                    <li>Žiadna odmena za nových zákazníkov</li>
+                    <li>Žiadna odmena za maržu</li>
+                    <li>Kumulatívne YTD — zlý mesiac sa schová</li>
+                </ul>
+            </div>
+            <div class="card card-green">
+                <h3 style="color: var(--green-light);">✓ Nový model</h3>
+                <ul class="check-list">
+                    <li><strong>Odmena za UHRADENÉ</strong> — keď zákazník zaplatí, ty zarobíš</li>
+                    <li>Progresívne pásma — čím viac predáš, tým vyšší %</li>
+                    <li>Uncapped — žiadny strop, 120%+ = 1.5× sadzba</li>
+                    <li>Bonus za nových zákazníkov (1.5–5k CZK)</li>
+                    <li>Margin bonus za udržanie marže</li>
+                    <li>Každý mesiac = nový štart</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ 2. AKO TO FUNGUJE ═══ -->
+    <div class="section">
+        <div class="section-label">Ako to funguje</div>
+        <div class="section-title">5 zložiek odmeny</div>
+
+        <div class="card card-blue" style="margin-bottom: 24px;">
+            <div style="font-family: monospace; font-size: 14px; line-height: 2; color: var(--gray-200);">
+                <strong style="color: var(--white); font-size: 16px;">CELKOVÁ ODMENA =</strong><br>
+                <span style="color: var(--blue-light);">A)</span> RETAINER <span style="color: var(--gray-500);">— garantovaný mesačný príjem</span><br>
+                <span style="color: var(--blue-light);">+</span> <span style="color: var(--green-light);">B)</span> KOMISIA Z UHRADENÝCH <span style="color: var(--gray-500);">— % z toho, čo zákazník reálne zaplatil</span><br>
+                <span style="color: var(--blue-light);">+</span> <span style="color: var(--amber);">C)</span> MARGIN BONUS <span style="color: var(--gray-500);">— za udržanie/zvýšenie marže</span><br>
+                <span style="color: var(--blue-light);">+</span> <span style="color: var(--teal-light);">D)</span> NEW BUSINESS PREMIUM <span style="color: var(--gray-500);">— za nových zákazníkov</span><br>
+                <span style="color: var(--blue-light);">+</span> <span style="color: var(--red-light);">E)</span> QUARTERLY ACCELERATOR <span style="color: var(--gray-500);">— za konzistentný výkon</span>
+            </div>
+        </div>
+
+        <div class="section-title" style="font-size: 16px; margin-bottom: 12px;">Komisia — progresívne pásma</div>
+        <table>
+            <thead>
+                <tr><th>Plnenie plánu</th><th>Sadzba</th><th style="text-align: center;">Multiplikátor</th><th>Čo to znamená</th></tr>
+            </thead>
+            <tbody>
+                <tr><td style="color: var(--red-light);">< 80%</td><td>0%</td><td style="text-align: center;">—</td><td>Len retainer</td></tr>
+                <tr><td style="color: var(--amber);">80–89%</td><td>0.5%</td><td style="text-align: center;">0.5×</td><td>Urgencia opraviť</td></tr>
+                <tr><td style="color: var(--white); font-weight: 600;">90–99%</td><td>0.8%</td><td style="text-align: center;">1.0×</td><td>Štandard</td></tr>
+                <tr><td style="color: var(--green-light); font-weight: 600;">100–109%</td><td>1.0%</td><td style="text-align: center;">1.25×</td><td>Na pláne — odmenený</td></tr>
+                <tr><td style="color: var(--green-light); font-weight: 700;">110–119%</td><td>1.2%</td><td style="text-align: center;">1.5×</td><td>Overperformance</td></tr>
+                <tr class="highlight-row"><td>120%+</td><td><strong>1.5%</strong></td><td style="text-align: center;"><strong>1.9×</strong></td><td><strong>Uncapped — top performer</strong></td></tr>
+            </tbody>
+        </table>
+
+        <div class="quote-block" style="margin-top: 16px;">
+            <strong>Kľúčové:</strong> Sadzba sa aplikuje na <strong>celý uhradený obrat</strong>. Čím viac predáš a zákazník zaplatí, tým viac zarobíš. <strong>Žiadny strop.</strong>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ 3. KOĽKO ZAROBÍŠ ═══ -->
+    <div class="section">
+        <div class="section-label">Simulácie</div>
+        <div class="section-title">Koľko zarobíš — porovnanie starý vs. nový</div>
+        <div class="section-desc">Všetky čísla bez DPH. Nový model = fakturácia (FA). Plány = 2025 actual + 25% rast.</div>
+
+        <!-- Karolína -->
+        <div class="card" style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="margin-bottom: 0;">Karolína <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B CZ · Praha</span></h3>
+                <span class="badge badge-blue">Retainer 45 000 CZK</span>
+            </div>
+            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">Ročný plán: 10.3M CZK (bez DPH) · Mesačný Ø: 1 150k</div>
+            <table>
+                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel</th></tr></thead>
+                <tbody>
+                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">45 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
+                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">90%</span></td><td style="text-align: right;">55 280</td><td style="text-align: right;"></td></tr>
+                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">60 500</td><td style="text-align: right;"></td></tr>
+                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">69 700</td><td style="text-align: right; color: var(--green-light);">+9.2k vs 100%</td></tr>
+                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">130%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">73 400</td><td style="text-align: right; color: var(--green-light);">+12.9k vs 100%</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 12px; font-size: 12px; color: var(--gray-500);">+ Q accelerator (10-30k/Q) + New Business premium + Team Success Sharing nie sú zahrnuté.</div>
+        </div>
+
+        <!-- Jirka -->
+        <div class="card" style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="margin-bottom: 0;">Jirka <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B CZ+SK · Morava+SK</span></h3>
+                <span class="badge badge-blue">Retainer 35 000 CZK</span>
+            </div>
+            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">Ročný plán: 4.8M CZK (bez DPH) · Mesačný Ø: 530k</div>
+            <table>
+                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel</th></tr></thead>
+                <tbody>
+                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">35 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
+                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">90%</span></td><td style="text-align: right;">40 810</td><td style="text-align: right;"></td></tr>
+                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">42 300</td><td style="text-align: right;"></td></tr>
+                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">48 540</td><td style="text-align: right; color: var(--green-light);">+6.2k vs 100%</td></tr>
+                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">130%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">51 340</td><td style="text-align: right; color: var(--green-light);">+9.0k vs 100%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Štěpán -->
+        <div class="card" style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="margin-bottom: 0;">Štěpán <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B SK+CZ retail</span></h3>
+                <span class="badge badge-blue">Retainer 30 000 CZK</span>
+            </div>
+            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">Ročný plán: 3.0M CZK (bez DPH) · Mesačný Ø: 334k</div>
+            <table>
+                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel</th></tr></thead>
+                <tbody>
+                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">30 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
+                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">90%</span></td><td style="text-align: right;">34 400</td><td style="text-align: right;"></td></tr>
+                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">35 340</td><td style="text-align: right;"></td></tr>
+                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">40 010</td><td style="text-align: right; color: var(--green-light);">+4.7k vs 100%</td></tr>
+                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">130%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">42 510</td><td style="text-align: right; color: var(--green-light);">+7.2k vs 100%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ 4. ŠTĚPÁN HPP → FA ═══ -->
+    <div class="section">
+        <div class="section-label">Prechod na FA</div>
+        <div class="section-title">Štěpán: HPP → Fakturácia</div>
+        <div class="section-desc">Všetci budú na rovnakom modeli — faktúra. Pre Štěpána je to výrazné zlepšenie.</div>
+
+        <div class="grid-2">
+            <div class="card" style="border-color: rgba(239,68,68,0.2);">
+                <h3 style="color: var(--red-light);">Teraz (HPP)</h3>
+                <table>
+                    <tr><td>Fix hrubá mzda</td><td style="text-align: right; font-weight: 700;">25 000 CZK</td></tr>
+                    <tr><td>Variabil (11k × %)</td><td style="text-align: right;">~11 000 CZK</td></tr>
+                    <tr><td style="font-weight: 600;">Hrubá mzda (100%)</td><td style="text-align: right; font-weight: 700;">~36 000 CZK</td></tr>
+                    <tr><td>Odvody zamestnanec</td><td style="text-align: right; color: var(--red-light);">−4 200</td></tr>
+                    <tr><td>Daň (po zľave)</td><td style="text-align: right; color: var(--red-light);">−2 800</td></tr>
+                    <tr class="highlight-row"><td><strong>Čistý príjem</strong></td><td style="text-align: right; font-size: 18px;">~29 000 CZK</td></tr>
+                </table>
+                <div style="margin-top: 12px; font-size: 12px; color: var(--gray-500);">
+                    Fix nezmenený 3 roky. Variabil stropovaný. Nad 100% = rovnaký bonus.
+                </div>
+            </div>
+
+            <div class="card card-green">
+                <h3 style="color: var(--green-light);">Nový (FA)</h3>
+                <table>
+                    <tr><td>Retainer</td><td style="text-align: right; font-weight: 700; color: var(--green-light);">30 000 CZK</td></tr>
+                    <tr><td>Komisia (100%)</td><td style="text-align: right;">~3 300</td></tr>
+                    <tr><td>Margin bonus</td><td style="text-align: right;">~2 000</td></tr>
+                    <tr><td style="font-weight: 600;">Fakturovaná suma (100%)</td><td style="text-align: right; font-weight: 700;">~35 300 CZK</td></tr>
+                    <tr><td>Paušálne výdavky (60%)</td><td style="text-align: right; color: var(--gray-500);">daňový základ nízky</td></tr>
+                    <tr><td>Odvody + daň (odhad)</td><td style="text-align: right; color: var(--amber);">−5 500</td></tr>
+                    <tr class="highlight-row"><td><strong>Čistý príjem</strong></td><td style="text-align: right; font-size: 18px; color: var(--green-light);">~29 800 CZK</td></tr>
+                </table>
+                <div style="margin-top: 12px; font-size: 12px; color: var(--green-light);">
+                    Retainer +5k vs. starý fix. Uncapped upside. Pri 120% = ~34k čistý.
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px; border-color: rgba(59,130,246,0.2);">
+            <h3 style="color: var(--blue-light);">Čo Štěpán získava prechodom na FA</h3>
+            <ul class="check-list">
+                <li><strong>Retainer 30k</strong> vs. starý fix 25k — +5k garantovane</li>
+                <li><strong>Uncapped upside</strong> — pri 120% plnenia +4.7k navyše mesačne</li>
+                <li><strong>Margin bonus</strong> — 2-4k/mes za udržanie marže (doteraz nič)</li>
+                <li><strong>New Business Premium</strong> — 1.5-5k za každého nového zákazníka</li>
+                <li><strong>Q Accelerator</strong> — 10-30k/Q za konzistentný výkon</li>
+                <li><strong>Daňová optimalizácia</strong> — paušálne výdavky 60%, nižšie efektívne zdanenie</li>
+            </ul>
+        </div>
+
+        <div class="quote-block">
+            <strong>3-mesačná garancia (apríl–jún):</strong> Ak nový model dá menej ako priemer posledných 3 mesiacov v starom modeli, dorovnáme na garanciu. <strong>Riziko = nula.</strong>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ 5. UHRADENÝ OBRAT ═══ -->
+    <div class="section">
+        <div class="section-label">Kľúčová zmena</div>
+        <div class="section-title">Odmena za UHRADENÉ — nie vyfakturované</div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>Ako to funguje</h3>
+                <div style="font-size: 14px; color: var(--gray-300); line-height: 1.8;">
+                    1. Vystavíš faktúru zákazníkovi<br>
+                    2. Zákazník zaplatí<br>
+                    3. <strong style="color: var(--green-light);">V momente úhrady</strong> sa ti započíta do plnenia<br>
+                    4. Na konci mesiaca = súčet uhradených<br>
+                    5. Vyhodnotenie do 5. dňa nasl. mesiaca
+                </div>
+            </div>
+            <div class="card">
+                <h3>Prečo je to lepšie — pre teba</h3>
+                <ul class="check-list" style="font-size: 13px;">
+                    <li>Motivuješ zákazníka platiť rýchlo</li>
+                    <li>Kratšie splatnosti = rýchlejšia odmena</li>
+                    <li>Neriešiš dlžníkov — ak neplatí, nepredávaš mu</li>
+                    <li>Firma má lepší cashflow = viac peňazí na rozvoj</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 16px; font-size: 13px; color: var(--gray-500); text-align: center;">
+            Zdroj dát: Pohoda — report uhradených faktúr (bez DPH) k poslednému dňu mesiaca.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ 6. NÁKLAD PRE FIRMU ═══ -->
+    <div class="section">
+        <div class="section-label">Pre Vladimíra</div>
+        <div class="section-title">Čo to stojí firmu — a čo to prinesie</div>
+
+        <div class="grid-3" style="margin-bottom: 24px;">
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Mesačný náklad (pri 100%)</div>
+                <div class="big-number" style="color: var(--white);">~162k</div>
+                <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">CZK / mesiac (3 sales)</div>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Ročný náklad (Q2-Q4)</div>
+                <div class="big-number gradient-text">~1.46M</div>
+                <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">CZK / 9 mesiacov</div>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Delta vs. starý model</div>
+                <div class="big-number" style="color: var(--amber);">+200k</div>
+                <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">CZK ročne navyše</div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr><th>Položka</th><th style="text-align: right;">Mesačne</th><th style="text-align: right;">Q2-Q4 (9 mes.)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Retainery (45k + 35k + 30k)</td><td style="text-align: right;">110 000</td><td style="text-align: right;">990 000</td></tr>
+                <tr><td>Commissions (pri 100%)</td><td style="text-align: right;">~33 000</td><td style="text-align: right;">~297 000</td></tr>
+                <tr><td>Margin bonus</td><td style="text-align: right;">~6 000</td><td style="text-align: right;">~54 000</td></tr>
+                <tr><td>Q Accelerators</td><td style="text-align: right;">~10 000</td><td style="text-align: right;">~90 000</td></tr>
+                <tr><td>New Business + SPIFs</td><td style="text-align: right;">~3 000</td><td style="text-align: right;">~27 000</td></tr>
+                <tr class="highlight-row"><td><strong>CELKOM sales tím</strong></td><td style="text-align: right;"><strong>~162 000</strong></td><td style="text-align: right;"><strong>~1 458 000</strong></td></tr>
+            </tbody>
+        </table>
+
+        <div class="card card-green" style="margin-top: 24px;">
+            <h3 style="color: var(--green-light);">ROI — čo firma získava za +200k ročne</h3>
+            <div class="grid-2" style="gap: 24px;">
+                <ul class="check-list" style="font-size: 13px;">
+                    <li><strong>Samoregulačný mechanizmus na pohľadávky</strong> — obchodníci sami tlačia na úhrady</li>
+                    <li><strong>Uncapped upside</strong> motivuje k 120%+ → potenciálne +20% revenue nad plán</li>
+                    <li><strong>Margin ochrana</strong> — bonus za maržu zabraňuje zbytočným zľavám</li>
+                </ul>
+                <ul class="check-list" style="font-size: 13px;">
+                    <li><strong>New Business akvizícia</strong> — platíme za rast, nie len udržiavanie</li>
+                    <li><strong>Retencia Štěpána</strong> — retention risk signal riešený (+5k retainer, FA)</li>
+                    <li><strong>Všetci na FA</strong> — nižšie odvody pre firmu vs. HPP</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote-block" style="margin-top: 16px;">
+            Za <strong>+200k CZK ročne navyše</strong> získavame systém, ktorý sám rieši pohľadávky, motivuje k rastu, a chráni maržu. Ak Q1 = 120% (čo sa deje), extra revenue z overperformance zaplatí celý nárast a ešte viac.
+        </div>
+    </div>
+
+    <!-- ═══ 7. ROLLOUT ═══ -->
+    <div class="section">
+        <div class="section-label">Implementácia</div>
+        <div class="section-title">Rollout plán</div>
+        <table>
+            <thead><tr><th>Kedy</th><th>Čo</th><th>Kto</th></tr></thead>
+            <tbody>
+                <tr><td style="font-weight: 600; color: var(--teal-light);">18. 3.</td><td>Schválenie princípov s Vladimírom</td><td>Juraj + Vladimír</td></tr>
+                <tr><td style="font-weight: 600; color: var(--teal-light);">19.–21. 3.</td><td>1:1 s každým repom — prezentácia + simulácie "koľko zarobíš"</td><td>Juraj</td></tr>
+                <tr><td style="font-weight: 600;">24.–28. 3.</td><td>Finalizácia mesačných plánov na základe feedbacku</td><td>Juraj</td></tr>
+                <tr><td style="font-weight: 600;">31. 3.</td><td>Distribúcia finálneho comp plánu — písomne</td><td>Juraj</td></tr>
+                <tr class="highlight-row"><td>1. 4.</td><td><strong>Go-live</strong> nový model (s 3-mesačnou garanciou)</td><td>—</td></tr>
+                <tr><td>30. 6.</td><td>Review + kalibrácia sadzieb na základe reálnych dát</td><td>Juraj</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        VITAR Sport · Sales Compensation Redesign 2026 · Marec 2026
+    </div>
+
+</div>
+</body>
+</html>
