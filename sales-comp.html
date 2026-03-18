@@ -214,23 +214,43 @@
             </div>
         </div>
 
-        <div class="section-title" style="font-size: 16px; margin-bottom: 12px;">Komisia — progresívne pásma</div>
+        <div class="section-title" style="font-size: 16px; margin-bottom: 12px;">Komisia — osobná sadzba × multiplikátor</div>
+        <div class="section-desc">Každý rep má osobnú base rate (reflektuje veľkosť territory). Multiplikátory sú rovnaké pre všetkých.</div>
+
+        <div class="grid-3" style="margin-bottom: 16px;">
+            <div class="card" style="text-align: center; padding: 16px;">
+                <div style="font-size: 12px; color: var(--gray-400); margin-bottom: 4px;">Karolína</div>
+                <div style="font-size: 28px; font-weight: 800; color: var(--teal-light);">2.0%</div>
+                <div style="font-size: 11px; color: var(--gray-500);">Ø 991k/mes obrat</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 16px;">
+                <div style="font-size: 12px; color: var(--gray-400); margin-bottom: 4px;">Jirka</div>
+                <div style="font-size: 28px; font-weight: 800; color: var(--teal-light);">4.5%</div>
+                <div style="font-size: 11px; color: var(--gray-500);">Ø 380k/mes obrat</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 16px;">
+                <div style="font-size: 12px; color: var(--gray-400); margin-bottom: 4px;">Štěpán</div>
+                <div style="font-size: 28px; font-weight: 800; color: var(--teal-light);">4.0%</div>
+                <div style="font-size: 11px; color: var(--gray-500);">Ø 227k/mes obrat</div>
+            </div>
+        </div>
+
         <table>
             <thead>
-                <tr><th>Plnenie plánu</th><th>Sadzba</th><th style="text-align: center;">Multiplikátor</th><th>Čo to znamená</th></tr>
+                <tr><th>Plnenie plánu</th><th style="text-align: center;">Multiplikátor</th><th>Efektívna sadzba K / J / Š</th><th>Poznámka</th></tr>
             </thead>
             <tbody>
-                <tr><td style="color: var(--red-light);">< 80%</td><td>0%</td><td style="text-align: center;">—</td><td>Len retainer</td></tr>
-                <tr><td style="color: var(--amber);">80–89%</td><td>0.5%</td><td style="text-align: center;">0.5×</td><td>Urgencia opraviť</td></tr>
-                <tr><td style="color: var(--white); font-weight: 600;">90–99%</td><td>0.8%</td><td style="text-align: center;">1.0×</td><td>Štandard</td></tr>
-                <tr><td style="color: var(--green-light); font-weight: 600;">100–109%</td><td>1.0%</td><td style="text-align: center;">1.25×</td><td>Na pláne — odmenený</td></tr>
-                <tr><td style="color: var(--green-light); font-weight: 700;">110–119%</td><td>1.2%</td><td style="text-align: center;">1.5×</td><td>Overperformance</td></tr>
-                <tr class="highlight-row"><td>120%+</td><td><strong>1.5%</strong></td><td style="text-align: center;"><strong>1.9×</strong></td><td><strong>Uncapped — top performer</strong></td></tr>
+                <tr><td style="color: var(--red-light);">< 80%</td><td style="text-align: center;">0×</td><td>0% / 0% / 0%</td><td>Len retainer</td></tr>
+                <tr><td style="color: var(--amber);">80–89%</td><td style="text-align: center;">0.5×</td><td>1.0% / 2.25% / 2.0%</td><td>Pod plánom</td></tr>
+                <tr><td style="color: var(--white); font-weight: 600;">90–99%</td><td style="text-align: center;">0.75×</td><td>1.5% / 3.375% / 3.0%</td><td>Blízko plánu</td></tr>
+                <tr><td style="color: var(--green-light); font-weight: 600;">100–109%</td><td style="text-align: center;">1.0×</td><td style="color: var(--green-light); font-weight: 700;">2.0% / 4.5% / 4.0%</td><td>Na pláne — odmenený</td></tr>
+                <tr><td style="color: var(--green-light); font-weight: 700;">110–119%</td><td style="text-align: center;">1.25×</td><td>2.5% / 5.625% / 5.0%</td><td>Overperformance</td></tr>
+                <tr class="highlight-row"><td>120%+</td><td style="text-align: center;"><strong>1.5×</strong></td><td><strong>3.0% / 6.75% / 6.0%</strong></td><td><strong>Uncapped</strong></td></tr>
             </tbody>
         </table>
 
         <div class="quote-block" style="margin-top: 16px;">
-            <strong>Kľúčové:</strong> Sadzba sa aplikuje na <strong>celý uhradený obrat</strong>. Čím viac predáš a zákazník zaplatí, tým viac zarobíš. <strong>Žiadny strop.</strong>
+            <strong>Výpočet:</strong> Komisia = osobná sadzba × multiplikátor × uhradený obrat (bez DPH). Sadzba sa aplikuje na <strong>celý obrat</strong>. Vyšší objem = nižšia %, ale vyššia absolútna odmena. <strong>Žiadny strop.</strong>
         </div>
     </div>
 
@@ -245,38 +265,40 @@
         <!-- Karolína -->
         <div class="card" style="margin-bottom: 24px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <h3 style="margin-bottom: 0;">Karolína <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B CZ · Praha</span></h3>
-                <span class="badge badge-blue">Retainer 45 000 CZK</span>
+                <h3 style="margin-bottom: 0;">Karolína <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B CZ · Praha · base rate 2.0%</span></h3>
+                <span class="badge badge-blue">Retainer 50 000 CZK</span>
             </div>
-            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">Ročný plán: 10.3M CZK (bez DPH) · Mesačný Ø: 1 150k</div>
+            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 4px;">Ročný plán: 10.3M CZK (bez DPH) · Mesačný Ø: 991k</div>
+            <div style="font-size: 12px; color: var(--green-light); margin-bottom: 12px;">Aktuálny priemer: 67.6k/mes → Nový pri 100%: <strong>71.8k</strong> → <strong>+6.2%</strong></div>
             <table>
-                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel</th></tr></thead>
+                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel vs teraz</th></tr></thead>
                 <tbody>
-                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">45 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
-                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">90%</span></td><td style="text-align: right;">55 280</td><td style="text-align: right;"></td></tr>
-                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">60 500</td><td style="text-align: right;"></td></tr>
-                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">69 700</td><td style="text-align: right; color: var(--green-light);">+9.2k vs 100%</td></tr>
-                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">130%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">73 400</td><td style="text-align: right; color: var(--green-light);">+12.9k vs 100%</td></tr>
+                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">50 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
+                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">85%</span></td><td style="text-align: right;">58 430</td><td style="text-align: right; color: var(--amber);">−14%</td></tr>
+                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">71 820</td><td style="text-align: right; color: var(--green-light);">+6.2%</td></tr>
+                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">110%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">79 250</td><td style="text-align: right; color: var(--green-light);">+17.2%</td></tr>
+                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">89 676</td><td style="text-align: right; color: var(--green-light);">+32.6%</td></tr>
                 </tbody>
             </table>
-            <div style="margin-top: 12px; font-size: 12px; color: var(--gray-500);">+ Q accelerator (10-30k/Q) + New Business premium + Team Success Sharing nie sú zahrnuté.</div>
+            <div style="margin-top: 12px; font-size: 12px; color: var(--gray-500);">+ Q accelerator (10-30k/Q) + New Business premium + margin bonus 2-4k nie sú zahrnuté vo všetkých riadkoch.</div>
         </div>
 
         <!-- Jirka -->
         <div class="card" style="margin-bottom: 24px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <h3 style="margin-bottom: 0;">Jirka <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B CZ+SK · Morava+SK</span></h3>
-                <span class="badge badge-blue">Retainer 35 000 CZK</span>
+                <h3 style="margin-bottom: 0;">Jirka <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B CZ+SK · Morava+SK · base rate 4.5%</span></h3>
+                <span class="badge badge-blue">Retainer 50 000 CZK</span>
             </div>
-            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">Ročný plán: 4.8M CZK (bez DPH) · Mesačný Ø: 530k</div>
+            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 4px;">Ročný plán: 4.8M CZK (bez DPH) · Mesačný Ø: 380k</div>
+            <div style="font-size: 12px; color: var(--green-light); margin-bottom: 12px;">Aktuálny priemer: 64.8k/mes → Nový pri 100%: <strong>69.1k</strong> → <strong>+6.6%</strong></div>
             <table>
-                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel</th></tr></thead>
+                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel vs teraz</th></tr></thead>
                 <tbody>
-                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">35 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
-                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">90%</span></td><td style="text-align: right;">40 810</td><td style="text-align: right;"></td></tr>
-                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">42 300</td><td style="text-align: right;"></td></tr>
-                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">48 540</td><td style="text-align: right; color: var(--green-light);">+6.2k vs 100%</td></tr>
-                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">130%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">51 340</td><td style="text-align: right; color: var(--green-light);">+9.0k vs 100%</td></tr>
+                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">50 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
+                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">85%</span></td><td style="text-align: right;">57 268</td><td style="text-align: right; color: var(--amber);">−12%</td></tr>
+                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">69 100</td><td style="text-align: right; color: var(--green-light);">+6.6%</td></tr>
+                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">110%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">75 513</td><td style="text-align: right; color: var(--green-light);">+16.5%</td></tr>
+                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">84 780</td><td style="text-align: right; color: var(--green-light);">+30.8%</td></tr>
                 </tbody>
             </table>
         </div>
@@ -284,18 +306,19 @@
         <!-- Štěpán -->
         <div class="card" style="margin-bottom: 24px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <h3 style="margin-bottom: 0;">Štěpán <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B SK+CZ retail</span></h3>
-                <span class="badge badge-blue">Retainer 30 000 CZK</span>
+                <h3 style="margin-bottom: 0;">Štěpán <span style="font-weight: 400; color: var(--gray-400); font-size: 13px;">B2B SK+CZ retail · base rate 4.0%</span></h3>
+                <span class="badge badge-blue">Retainer 35 000 CZK</span>
             </div>
-            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 12px;">Ročný plán: 3.0M CZK (bez DPH) · Mesačný Ø: 334k</div>
+            <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 4px;">Ročný plán: 3.0M CZK (bez DPH) · Mesačný Ø: 227k</div>
+            <div style="font-size: 12px; color: var(--green-light); margin-bottom: 12px;">Aktuálna HPP hrubá: 41.8k (net ~33.5k) → Nový FA pri 100%: <strong>46.1k</strong> (net ~38.3k) → <strong>+14% net</strong></div>
             <table>
-                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel</th></tr></thead>
+                <thead><tr><th>Scenár</th><th>Plnenie</th><th style="text-align: right;">Nový model</th><th style="text-align: right;">Rozdiel vs teraz</th></tr></thead>
                 <tbody>
-                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">30 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
-                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">90%</span></td><td style="text-align: right;">34 400</td><td style="text-align: right;"></td></tr>
-                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">35 340</td><td style="text-align: right;"></td></tr>
-                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">40 010</td><td style="text-align: right; color: var(--green-light);">+4.7k vs 100%</td></tr>
-                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">130%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">42 510</td><td style="text-align: right; color: var(--green-light);">+7.2k vs 100%</td></tr>
+                    <tr><td>Slabý mesiac</td><td><span class="badge badge-red">75%</span></td><td style="text-align: right;">35 000</td><td style="text-align: right; color: var(--gray-500);">retainer chráni</td></tr>
+                    <tr><td>Pod plánom</td><td><span class="badge badge-amber">85%</span></td><td style="text-align: right;">38 860</td><td style="text-align: right; color: var(--amber);">−7%</td></tr>
+                    <tr><td style="font-weight: 600;">Na pláne</td><td><span class="badge badge-green">100%</span></td><td style="text-align: right; font-weight: 700;">46 080</td><td style="text-align: right; color: var(--green-light);">+14% net</td></tr>
+                    <tr><td style="font-weight: 600;">Nad plánom</td><td><span class="badge badge-green">110%</span></td><td style="text-align: right; font-weight: 700; color: var(--green-light);">49 488</td><td style="text-align: right; color: var(--green-light);">+24% net</td></tr>
+                    <tr class="highlight-row"><td>Top mesiac</td><td><span class="badge badge-green">120%</span></td><td style="text-align: right; font-weight: 800; color: var(--green-light);">55 344</td><td style="text-align: right; color: var(--green-light);">+40% net</td></tr>
                 </tbody>
             </table>
         </div>
@@ -314,30 +337,31 @@
                 <h3 style="color: var(--red-light);">Teraz (HPP)</h3>
                 <table>
                     <tr><td>Fix hrubá mzda</td><td style="text-align: right; font-weight: 700;">25 000 CZK</td></tr>
-                    <tr><td>Variabil (11k × %)</td><td style="text-align: right;">~11 000 CZK</td></tr>
-                    <tr><td style="font-weight: 600;">Hrubá mzda (100%)</td><td style="text-align: right; font-weight: 700;">~36 000 CZK</td></tr>
-                    <tr><td>Odvody zamestnanec</td><td style="text-align: right; color: var(--red-light);">−4 200</td></tr>
-                    <tr><td>Daň (po zľave)</td><td style="text-align: right; color: var(--red-light);">−2 800</td></tr>
-                    <tr class="highlight-row"><td><strong>Čistý príjem</strong></td><td style="text-align: right; font-size: 18px;">~29 000 CZK</td></tr>
+                    <tr><td>Variabil CZ (3k × kumul%)</td><td style="text-align: right;">~3 000 CZK</td></tr>
+                    <tr><td>Variabil SK (8k × kumul%)</td><td style="text-align: right;">~8 000 CZK</td></tr>
+                    <tr><td style="font-weight: 600;">Hrubá mzda Ø (bez eventov)</td><td style="text-align: right; font-weight: 700;">~36 000 CZK</td></tr>
+                    <tr><td>Odvody zamestnanec (11%)</td><td style="text-align: right; color: var(--red-light);">−3 960</td></tr>
+                    <tr><td>Daň (po zľave)</td><td style="text-align: right; color: var(--red-light);">−2 830</td></tr>
+                    <tr class="highlight-row"><td><strong>Čistý príjem</strong></td><td style="text-align: right; font-size: 18px;">~29 200 CZK</td></tr>
                 </table>
                 <div style="margin-top: 12px; font-size: 12px; color: var(--gray-500);">
-                    Fix nezmenený 3 roky. Variabil stropovaný. Nad 100% = rovnaký bonus.
+                    Fix nezmenený 3+ roky. S eventmi priemer 41.8k hrubá → ~33.5k net.
                 </div>
             </div>
 
             <div class="card card-green">
                 <h3 style="color: var(--green-light);">Nový (FA)</h3>
                 <table>
-                    <tr><td>Retainer</td><td style="text-align: right; font-weight: 700; color: var(--green-light);">30 000 CZK</td></tr>
-                    <tr><td>Komisia (100%)</td><td style="text-align: right;">~3 300</td></tr>
+                    <tr><td>Retainer</td><td style="text-align: right; font-weight: 700; color: var(--green-light);">35 000 CZK</td></tr>
+                    <tr><td>Komisia 4.0% (100%)</td><td style="text-align: right;">~9 080</td></tr>
                     <tr><td>Margin bonus</td><td style="text-align: right;">~2 000</td></tr>
-                    <tr><td style="font-weight: 600;">Fakturovaná suma (100%)</td><td style="text-align: right; font-weight: 700;">~35 300 CZK</td></tr>
+                    <tr><td style="font-weight: 600;">Fakturovaná suma (100%)</td><td style="text-align: right; font-weight: 700;">~46 080 CZK</td></tr>
                     <tr><td>Paušálne výdavky (60%)</td><td style="text-align: right; color: var(--gray-500);">daňový základ nízky</td></tr>
-                    <tr><td>Odvody + daň (odhad)</td><td style="text-align: right; color: var(--amber);">−5 500</td></tr>
-                    <tr class="highlight-row"><td><strong>Čistý príjem</strong></td><td style="text-align: right; font-size: 18px; color: var(--green-light);">~29 800 CZK</td></tr>
+                    <tr><td>Odvody + daň (odhad)</td><td style="text-align: right; color: var(--amber);">−7 800</td></tr>
+                    <tr class="highlight-row"><td><strong>Čistý príjem</strong></td><td style="text-align: right; font-size: 18px; color: var(--green-light);">~38 300 CZK</td></tr>
                 </table>
                 <div style="margin-top: 12px; font-size: 12px; color: var(--green-light);">
-                    Retainer +5k vs. starý fix. Uncapped upside. Pri 120% = ~34k čistý.
+                    Retainer +10k vs. starý fix. Uncapped upside. Pri 120% = ~47.5k čistý.
                 </div>
             </div>
         </div>
@@ -345,12 +369,14 @@
         <div class="card" style="margin-top: 16px; border-color: rgba(59,130,246,0.2);">
             <h3 style="color: var(--blue-light);">Čo Štěpán získava prechodom na FA</h3>
             <ul class="check-list">
-                <li><strong>Retainer 30k</strong> vs. starý fix 25k — +5k garantovane</li>
-                <li><strong>Uncapped upside</strong> — pri 120% plnenia +4.7k navyše mesačne</li>
+                <li><strong>Retainer 35k</strong> vs. starý fix 25k — <strong>+10k garantovane</strong></li>
+                <li><strong>Komisia 4.0%</strong> z uhradených — pri 100% plnení +9k mesačne</li>
+                <li><strong>Uncapped upside</strong> — pri 120% plnenia = 55.3k FA (vs. ~41.8k HPP)</li>
                 <li><strong>Margin bonus</strong> — 2-4k/mes za udržanie marže (doteraz nič)</li>
                 <li><strong>New Business Premium</strong> — 1.5-5k za každého nového zákazníka</li>
                 <li><strong>Q Accelerator</strong> — 10-30k/Q za konzistentný výkon</li>
                 <li><strong>Daňová optimalizácia</strong> — paušálne výdavky 60%, nižšie efektívne zdanenie</li>
+                <li><strong>Čistý príjem +14%</strong> — z ~33.5k HPP net na ~38.3k FA net pri 100%</li>
             </ul>
         </div>
 
@@ -403,18 +429,18 @@
         <div class="grid-3" style="margin-bottom: 24px;">
             <div class="card" style="text-align: center;">
                 <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Mesačný náklad (pri 100%)</div>
-                <div class="big-number" style="color: var(--white);">~162k</div>
+                <div class="big-number" style="color: var(--white);">~202k</div>
                 <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">CZK / mesiac (3 sales)</div>
             </div>
             <div class="card" style="text-align: center;">
-                <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Ročný náklad (Q2-Q4)</div>
-                <div class="big-number gradient-text">~1.46M</div>
+                <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Q2-Q4 náklad</div>
+                <div class="big-number gradient-text">~1.82M</div>
                 <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">CZK / 9 mesiacov</div>
             </div>
             <div class="card" style="text-align: center;">
                 <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Delta vs. starý model</div>
-                <div class="big-number" style="color: var(--amber);">+200k</div>
-                <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">CZK ročne navyše</div>
+                <div class="big-number" style="color: var(--amber);">+122k</div>
+                <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">CZK za 9 mesiacov</div>
             </div>
         </div>
 
@@ -423,17 +449,27 @@
                 <tr><th>Položka</th><th style="text-align: right;">Mesačne</th><th style="text-align: right;">Q2-Q4 (9 mes.)</th></tr>
             </thead>
             <tbody>
-                <tr><td>Retainery (45k + 35k + 30k)</td><td style="text-align: right;">110 000</td><td style="text-align: right;">990 000</td></tr>
-                <tr><td>Commissions (pri 100%)</td><td style="text-align: right;">~33 000</td><td style="text-align: right;">~297 000</td></tr>
+                <tr><td>Retainery (50k + 50k + 35k)</td><td style="text-align: right;">135 000</td><td style="text-align: right;">1 215 000</td></tr>
+                <tr><td>Commissions (K: 2.0%, J: 4.5%, Š: 4.0%)</td><td style="text-align: right;">~46 000</td><td style="text-align: right;">~414 000</td></tr>
                 <tr><td>Margin bonus</td><td style="text-align: right;">~6 000</td><td style="text-align: right;">~54 000</td></tr>
                 <tr><td>Q Accelerators</td><td style="text-align: right;">~10 000</td><td style="text-align: right;">~90 000</td></tr>
-                <tr><td>New Business + SPIFs</td><td style="text-align: right;">~3 000</td><td style="text-align: right;">~27 000</td></tr>
-                <tr class="highlight-row"><td><strong>CELKOM sales tím</strong></td><td style="text-align: right;"><strong>~162 000</strong></td><td style="text-align: right;"><strong>~1 458 000</strong></td></tr>
+                <tr><td>New Business + SPIFs</td><td style="text-align: right;">~5 000</td><td style="text-align: right;">~45 000</td></tr>
+                <tr class="highlight-row"><td><strong>CELKOM sales tím</strong></td><td style="text-align: right;"><strong>~202 000</strong></td><td style="text-align: right;"><strong>~1 818 000</strong></td></tr>
             </tbody>
         </table>
 
+        <div class="card" style="margin-top: 16px; border-color: rgba(245,158,11,0.2);">
+            <h3 style="color: var(--amber);">Porovnanie: Starý vs. nový náklad</h3>
+            <table>
+                <tr><td>Starý model (K: 67.6k FA + J: 64.8k FA + Š: 56k HPP vr. odvodov)</td><td style="text-align: right;">~188 400/mes</td><td style="text-align: right;">~1 696k</td></tr>
+                <tr><td>Nový model (všetci FA + komisie + bonusy)</td><td style="text-align: right;">~202 000/mes</td><td style="text-align: right;">~1 818k</td></tr>
+                <tr class="highlight-row"><td><strong>Delta</strong></td><td style="text-align: right; color: var(--amber);"><strong>+13 600</strong></td><td style="text-align: right; color: var(--amber);"><strong>+122 000</strong></td></tr>
+            </table>
+            <div style="margin-top: 12px; font-size: 12px; color: var(--gray-400);">Štěpán HPP→FA znižuje náklad firmy o ~10k/mes (žiadne odvody zamestnávateľa 34%). Toto čiastočne kompenzuje vyššie retainery.</div>
+        </div>
+
         <div class="card card-green" style="margin-top: 24px;">
-            <h3 style="color: var(--green-light);">ROI — čo firma získava za +200k ročne</h3>
+            <h3 style="color: var(--green-light);">ROI — čo firma získava za +122k</h3>
             <div class="grid-2" style="gap: 24px;">
                 <ul class="check-list" style="font-size: 13px;">
                     <li><strong>Samoregulačný mechanizmus na pohľadávky</strong> — obchodníci sami tlačia na úhrady</li>
@@ -442,14 +478,14 @@
                 </ul>
                 <ul class="check-list" style="font-size: 13px;">
                     <li><strong>New Business akvizícia</strong> — platíme za rast, nie len udržiavanie</li>
-                    <li><strong>Retencia Štěpána</strong> — retention risk signal riešený (+5k retainer, FA)</li>
-                    <li><strong>Všetci na FA</strong> — nižšie odvody pre firmu vs. HPP</li>
+                    <li><strong>Retencia Štěpána</strong> — retention risk signal riešený (+10k retainer, FA, uncapped)</li>
+                    <li><strong>Validované z dát</strong> — sadzby nastavené na reálnych fakturách, min. +5% pre každého</li>
                 </ul>
             </div>
         </div>
 
         <div class="quote-block" style="margin-top: 16px;">
-            Za <strong>+200k CZK ročne navyše</strong> získavame systém, ktorý sám rieši pohľadávky, motivuje k rastu, a chráni maržu. Ak Q1 = 120% (čo sa deje), extra revenue z overperformance zaplatí celý nárast a ešte viac.
+            Za <strong>+13.6k CZK/mesiac navyše</strong> (vr. úspory z HPP→FA) získavame systém, ktorý sám rieši pohľadávky, motivuje k rastu, chráni maržu, a každý zarobí minimálne +5% nad aktuálny priemer. Ak Q1 = 120% (čo sa deje), extra revenue z overperformance pokryje celý nárast.
         </div>
     </div>
 
