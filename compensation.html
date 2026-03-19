@@ -117,6 +117,14 @@
             background: rgba(59,130,246,0.06);
         }
 
+        .total-row td {
+            color: var(--white);
+            font-weight: 800;
+            background: rgba(6,182,212,0.08);
+            border-top: 2px solid rgba(6,182,212,0.3);
+            border-bottom: 2px solid rgba(6,182,212,0.3);
+        }
+
         .badge {
             display: inline-block;
             padding: 3px 10px;
@@ -220,6 +228,7 @@
             .badge-blue { background: #dbeafe; color: #1e40af; }
             .badge-amber { background: #fef3c7; color: #92400e; }
             .example-box { border-color: #e5e7eb; }
+            .total-row td { background: #f0f9ff; border-color: #1e40af; }
         }
     </style>
 </head>
@@ -228,15 +237,74 @@
 <div class="container">
 
     <div class="header">
-        <h1>Návrh odmeňovania — Juraj Giacko</h1>
-        <div class="sub">VITAR Sport (bonus) &nbsp;·&nbsp; VITAR (retainer) &nbsp;·&nbsp; Platné od apríla 2026</div>
+        <h1>Odmeňovanie — Juraj Giacko</h1>
+        <div class="sub">VITAR Sport (HPP + bonus) &nbsp;·&nbsp; VITAR (retainer + bonus) &nbsp;·&nbsp; Platné od marca 2026</div>
     </div>
 
-    <!-- ═══ SECTION 1: VS BONUS ═══ -->
+    <!-- ═══ SUMMARY ═══ -->
     <div class="section">
-        <div class="section-label">VITAR Sport — bonusová zložka</div>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="label">Garantovaná časť</div>
+                <div class="value gradient-text">208 000</div>
+                <div class="note">CZK / mesiac</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Bonusová časť</div>
+                <div class="value gradient-text">50 000</div>
+                <div class="note">CZK / mesiac (pri splnení)</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Celkom</div>
+                <div class="value gradient-text">258 000</div>
+                <div class="note">CZK / mesiac</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ SECTION 1: VS HPP ═══ -->
+    <div class="section">
+        <div class="section-label">VITAR Sport — pracovný pomer (HPP)</div>
+        <div class="section-title">130 000 CZK / mesiac</div>
+        <div class="section-desc">Executive Director, VITAR Sport s.r.o. Pracovná zmluva od 1.3.2026.</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Zložka</th>
+                    <th style="text-align: right;">Suma</th>
+                    <th>Poznámka</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Základná mzda</td>
+                    <td style="text-align: right; font-weight: 700; color: var(--white);">70 000 CZK</td>
+                    <td><span class="badge badge-green">garantované</span></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Osobné ohodnotenie</td>
+                    <td style="text-align: right; font-weight: 700; color: var(--white);">60 000 CZK</td>
+                    <td><span class="badge badge-green">garantované</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>HPP celkom</td>
+                    <td style="text-align: right; font-size: 18px;"><strong>130 000 CZK</strong></td>
+                    <td><span class="badge badge-green">mesačne</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ SECTION 2: VS BONUS ═══ -->
+    <div class="section">
+        <div class="section-label">VITAR Sport — bonusová zložka (fakturácia)</div>
         <div class="section-title">25 000 CZK / mesiac (3 KPIs)</div>
-        <div class="section-desc">Vyhodnotenie mesačne (do 5. dňa nasl. mesiaca). Každý KPI = áno/nie.</div>
+        <div class="section-desc">Fakturované 1× za kvartál = 75 000 CZK / Q. Vyhodnotenie mesačne (do 5. dňa nasl. mesiaca). Každý KPI = áno/nie.</div>
 
         <table>
             <thead>
@@ -258,8 +326,8 @@
                 </tr>
                 <tr>
                     <td style="font-weight: 700; color: var(--white);">2</td>
-                    <td style="font-weight: 600; color: var(--white);">Gross Margin ≥35%</td>
-                    <td>≥35% = full, &lt;35% = 0</td>
+                    <td style="font-weight: 600; color: var(--white);">Gross Margin ≥40%</td>
+                    <td>≥40% = full, &lt;40% = 0</td>
                     <td style="text-align: right; font-weight: 700; color: var(--green-light);">8 000 CZK</td>
                     <td>(Revenue − COGS) / Revenue<br><span style="color: var(--amber); font-size: 11px;">⚠ Marža, nie prirážka</span></td>
                 </tr>
@@ -278,18 +346,39 @@
         </div>
     </div>
 
-    <!-- ═══ SECTION 2: VITAR RETAINER ═══ -->
+    <div class="divider"></div>
+
+    <!-- ═══ SECTION 3: VITAR RETAINER ═══ -->
     <div class="section">
-        <div class="section-label">VITAR — fakturácia (OSOčko)</div>
-        <div class="section-title">75 000 CZK / kvartál</div>
-        <div class="section-desc">Rola: Director of Digital Growth. Architekt, nie exekutíva. Vyplatenie kvartálne po review deliverables.</div>
+        <div class="section-label">VITAR s.r.o. — fakturácia (IČO)</div>
+        <div class="section-title">103 000 CZK / mesiac</div>
+        <div class="section-desc">Rola: Director of Digital Growth. Architekt, nie exekutíva. Mesačná fakturácia.</div>
 
         <table>
-            <tr class="highlight-row">
-                <td style="width: 50%;">Kvartálny retainer</td>
-                <td style="text-align: right; font-size: 22px;"><strong>75 000 CZK</strong></td>
-                <td style="text-align: right;"><span class="badge badge-blue">kvartálne</span></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Zložka</th>
+                    <th style="text-align: right;">Suma</th>
+                    <th>Poznámka</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Base konzulting — Digital Growth</td>
+                    <td style="text-align: right; font-weight: 700; color: var(--white);">78 000 CZK</td>
+                    <td><span class="badge badge-green">garantované</span></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Bonus — e-commerce KPI</td>
+                    <td style="text-align: right; font-weight: 700; color: var(--white);">25 000 CZK</td>
+                    <td><span class="badge badge-amber">bonusové</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>VITAR s.r.o. celkom</td>
+                    <td style="text-align: right; font-size: 18px;"><strong>103 000 CZK</strong></td>
+                    <td><span class="badge badge-blue">mesačne</span></td>
+                </tr>
+            </tbody>
         </table>
 
         <div style="margin-top: 20px;">
@@ -319,9 +408,86 @@
                 </tbody>
             </table>
         </div>
+    </div>
 
-        <div class="example-box">
-            <strong>Princíp:</strong> Deliverables sa dohodnú na začiatku každého kvartálu. Na konci Q review — splnené → vyplatenie 75k. Ak nesplnené → diskusia o úprave scope alebo pauze.
+    <div class="divider"></div>
+
+    <!-- ═══ SECTION 4: CELKOVÝ PREHĽAD ═══ -->
+    <div class="section">
+        <div class="section-label">Celkový prehľad</div>
+        <div class="section-title">Štruktúra odmeňovania</div>
+        <div class="section-desc">Podľa dohody schválenej v júli 2025. Celková suma zachovaná, rozdelená medzi dve entity.</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Zložka</th>
+                    <th>Entita</th>
+                    <th>Forma</th>
+                    <th style="text-align: right;">Suma</th>
+                    <th>Typ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Základná mzda</td>
+                    <td>VITAR Sport</td>
+                    <td>HPP</td>
+                    <td style="text-align: right; font-weight: 700;">70 000</td>
+                    <td><span class="badge badge-green">garantované</span></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Osobné ohodnotenie</td>
+                    <td>VITAR Sport</td>
+                    <td>HPP</td>
+                    <td style="text-align: right; font-weight: 700;">60 000</td>
+                    <td><span class="badge badge-green">garantované</span></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Base konzulting</td>
+                    <td>VITAR s.r.o.</td>
+                    <td>FA</td>
+                    <td style="text-align: right; font-weight: 700;">78 000</td>
+                    <td><span class="badge badge-green">garantované</span></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Bonus VS (3 KPIs)</td>
+                    <td>VITAR Sport</td>
+                    <td>FA (75k/Q)</td>
+                    <td style="text-align: right; font-weight: 700;">25 000</td>
+                    <td><span class="badge badge-amber">bonusové</span></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Bonus e-com KPI</td>
+                    <td>VITAR s.r.o.</td>
+                    <td>FA</td>
+                    <td style="text-align: right; font-weight: 700;">25 000</td>
+                    <td><span class="badge badge-amber">bonusové</span></td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="3"><strong>CELKOM</strong></td>
+                    <td style="text-align: right; font-size: 20px;"><strong>258 000 CZK</strong></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-grid" style="margin-top: 24px;">
+            <div class="summary-card">
+                <div class="label">HPP (VITAR Sport)</div>
+                <div class="value gradient-text">130 000</div>
+                <div class="note">70k + 60k · mesačne</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">FA (IČO)</div>
+                <div class="value gradient-text">128 000</div>
+                <div class="note">78k + 25k + 25k · mesačne</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Garantované / Bonusy</div>
+                <div class="value gradient-text">208 / 50</div>
+                <div class="note">tisíc CZK · mesačne</div>
+            </div>
         </div>
     </div>
 
