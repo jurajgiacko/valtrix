@@ -31,7 +31,54 @@
             background: var(--navy);
             color: var(--white);
             line-height: 1.6;
+        }
+
+        /* ═══ NAV ═══ */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15,23,42,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 0 32px;
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+
+        .nav-tab {
+            padding: 16px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--gray-400);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-tab:hover {
+            color: var(--gray-200);
+        }
+
+        .nav-tab.active {
+            color: var(--teal);
+            border-bottom-color: var(--teal);
+        }
+
+        /* ═══ TABS CONTENT ═══ */
+        .tab-content {
+            display: none;
             padding: 48px 32px;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         .container {
@@ -133,20 +180,9 @@
             font-weight: 700;
         }
 
-        .badge-green {
-            background: rgba(16,185,129,0.15);
-            color: var(--green-light);
-        }
-
-        .badge-blue {
-            background: rgba(59,130,246,0.15);
-            color: var(--blue);
-        }
-
-        .badge-amber {
-            background: rgba(245,158,11,0.15);
-            color: var(--amber);
-        }
+        .badge-green { background: rgba(16,185,129,0.15); color: var(--green-light); }
+        .badge-blue { background: rgba(59,130,246,0.15); color: var(--blue); }
+        .badge-amber { background: rgba(245,158,11,0.15); color: var(--amber); }
 
         .summary-grid {
             display: grid;
@@ -199,9 +235,7 @@
             color: var(--gray-300);
         }
 
-        .example-box strong {
-            color: var(--white);
-        }
+        .example-box strong { color: var(--white); }
 
         .divider {
             width: 100%;
@@ -217,8 +251,122 @@
             color: var(--gray-600);
         }
 
+        /* ═══ EMAIL CARDS ═══ */
+        .email-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .email-header {
+            padding: 16px 20px;
+            background: rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .email-header-left {
+            flex: 1;
+        }
+
+        .email-from {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 2px;
+        }
+
+        .email-to {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        .email-date {
+            font-size: 11px;
+            color: var(--gray-500);
+            white-space: nowrap;
+            margin-left: 16px;
+            padding-top: 2px;
+        }
+
+        .email-subject {
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--teal);
+            background: rgba(6,182,212,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .email-body {
+            padding: 20px;
+            font-size: 13px;
+            color: var(--gray-200);
+            line-height: 1.8;
+        }
+
+        .email-body p {
+            margin-bottom: 12px;
+        }
+
+        .email-body ol, .email-body ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .email-body li {
+            margin-bottom: 6px;
+        }
+
+        .email-highlight {
+            background: rgba(6,182,212,0.08);
+            border-left: 3px solid var(--teal);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .email-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 800;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .email-number-1 { background: rgba(59,130,246,0.2); color: var(--blue); }
+        .email-number-2 { background: rgba(16,185,129,0.2); color: var(--green-light); }
+        .email-number-3 { background: rgba(245,158,11,0.2); color: var(--amber); }
+
+        .email-label {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .email-label-sent { background: rgba(59,130,246,0.15); color: var(--blue); }
+        .email-label-received { background: rgba(16,185,129,0.15); color: var(--green-light); }
+
         @media print {
-            body { background: white; color: #111; padding: 24px; }
+            body { background: white; color: #111; }
+            .nav { display: none; }
+            .tab-content { display: block !important; padding: 24px; }
             .summary-card { border-color: #ccc; }
             .gradient-text { -webkit-text-fill-color: #1e40af; }
             th { color: #1e40af; border-bottom-color: #1e40af; }
@@ -229,11 +377,27 @@
             .badge-amber { background: #fef3c7; color: #92400e; }
             .example-box { border-color: #e5e7eb; }
             .total-row td { background: #f0f9ff; border-color: #1e40af; }
+            .email-card { border-color: #e5e7eb; }
+            .email-header { background: #f8fafc; }
+            .email-from { color: #111; }
+            .email-body { color: #333; }
         }
     </style>
 </head>
 <body>
 
+<!-- ═══ NAVIGATION ═══ -->
+<div class="nav">
+    <div class="nav-inner">
+        <div class="nav-tab active" onclick="switchTab('overview')">Prehľad</div>
+        <div class="nav-tab" onclick="switchTab('original')">Pôvodná dohoda (júl 2025)</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 1: OVERVIEW                            -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="tab-overview" class="tab-content active">
 <div class="container">
 
     <div class="header">
@@ -561,6 +725,199 @@
     </div>
 
 </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 2: PÔVODNÁ DOHODA                      -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="tab-original" class="tab-content">
+<div class="container">
+
+    <div class="header">
+        <h1>Pôvodná dohoda — júl 2025</h1>
+        <div class="sub">Mailová korešpondencia potvrdzujúca zmenu štruktúry z 240k na 258k</div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Kontext</div>
+        <div class="section-desc" style="font-size: 14px; line-height: 1.8; max-width: 700px;">
+            Pôvodný dokument s ponukou obsahoval štruktúru 90k HPP + 100k FA + 50k variabilný = <strong style="color: var(--white);">240 000 CZK</strong>.
+            Na základe nasledujúcej mailovej výmeny bola štruktúra upravená na 68k HPP + 140k FA + 50k variabilný = <strong style="color: var(--teal-light);">258 000 CZK</strong>.
+            Táto zmena bola potvrdená Pavlou Poláškovou (personálna riaditeľka) a nebola spätne premietnutá do dokumentu.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ MAIL 1 ═══ -->
+    <div class="section">
+        <div style="display: flex; align-items: center; margin-bottom: 16px;">
+            <span class="email-number email-number-1">1</span>
+            <span class="email-label email-label-sent">ODOSLANÉ</span>
+        </div>
+
+        <div class="email-card">
+            <div class="email-header">
+                <div class="email-header-left">
+                    <div class="email-from">Juraj Giacko &lt;juraj@giacko.sk&gt;</div>
+                    <div class="email-to">Komu: Nina Stránská &lt;nina.s@wolfhunt.cz&gt;</div>
+                </div>
+                <div class="email-date">24. júla 2025, 16:56</div>
+            </div>
+            <div class="email-subject">Re: Vitar - nabídka</div>
+            <div class="email-body">
+                <p>Dobrý deň, Nino,</p>
+                <p>ďakujem za zaslanie ponuky. Rámcovo mi vyhovuje a zodpovedá tomu, na čom sme sa včera spoločne zhodli.</p>
+                <p>Rád by som navrhol ešte niekoľko drobných úprav, ktoré verím, že prispejú k optimálnemu nastaveniu pre obe strany:</p>
+                <ol>
+                    <li><strong>Názov pozície</strong> — navrhujem „Director of Digital Growth"</li>
+                    <li><strong>Vyhodnocovanie variabilnej zložky</strong> — mesačne alebo kvartálne?</li>
+                    <li><strong>Rozdelenie HPP a IČO:</strong></li>
+                </ol>
+
+                <div class="email-highlight">
+                    Navrhujem rozloženie <strong>68k HPP + 140k fakturácia</strong>, čo by predstavovalo náklad cca 230 000 Kč — stále nižší ako pri plne internom modeli, s vyššou flexibilitou.
+                </div>
+
+                <p>Zároveň potvrdzujem, že z mojej strany nie je problém fakturovať aj viacerým entitám. A potvrdzujem aj rozdelenie variabilnej zložky.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ MAIL 2 ═══ -->
+    <div class="section">
+        <div style="display: flex; align-items: center; margin-bottom: 16px;">
+            <span class="email-number email-number-2">2</span>
+            <span class="email-label email-label-received">PRIJATÉ</span>
+        </div>
+
+        <div class="email-card">
+            <div class="email-header">
+                <div class="email-header-left">
+                    <div class="email-from">Polášková Pavla VITAR &lt;polaskova.pavla@vitar.cz&gt;</div>
+                    <div class="email-to">Komu: Nina Stránská, Polášek Vladimír, Červinka Tomáš, juraj@giacko.sk</div>
+                </div>
+                <div class="email-date">24. júla 2025, 21:30</div>
+            </div>
+            <div class="email-subject">Re: Vitar - nabídka</div>
+            <div class="email-body">
+                <p>Dobrý večer Nino a Juraji,</p>
+                <p>děkujeme za rychlou reakci.</p>
+
+                <div class="email-highlight">
+                    Co se týká připomínek, <strong>jsme schopni jim bez problému vyhovět.</strong>
+                </div>
+
+                <ol>
+                    <li>Změna názvu pozice — <strong>nevidíme v tom žádný problém.</strong></li>
+                    <li>Vyhodnocování variabilní složky — <strong>kvartální/pololetní</strong> bázi.</li>
+                    <li>S rozdělením HPP a IČO v jiném poměru <strong>nemáme problém.</strong> Jen pak bude potřeba fakturovat více entitám.</li>
+                </ol>
+
+                <p style="margin-top: 16px; font-size: 12px; color: var(--gray-400);">
+                    Pavla POLÁŠKOVÁ<br>
+                    personální ředitelka<br>
+                    VITAR, s.r.o. | třída Tomáše Bati 385 | 763 02 Zlín
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ MAIL 3 ═══ -->
+    <div class="section">
+        <div style="display: flex; align-items: center; margin-bottom: 16px;">
+            <span class="email-number email-number-3">3</span>
+            <span class="email-label email-label-sent">ODOSLANÉ</span>
+        </div>
+
+        <div class="email-card">
+            <div class="email-header">
+                <div class="email-header-left">
+                    <div class="email-from">Juraj Giacko &lt;juraj@giacko.sk&gt;</div>
+                    <div class="email-to">Komu: Polášková Pavla, Nina Stránská, Polášek Vladimír, Červinka Tomáš</div>
+                </div>
+                <div class="email-date">25. júla 2025, 10:30</div>
+            </div>
+            <div class="email-subject">Re: Vitar - nabídka</div>
+            <div class="email-body">
+                <p>Dobrý deň Pavlo, Nino, Vladimíre a Tomáši,</p>
+                <p>ďakujem za finálne upresnenie nabídky aj za ústretovosť pri doladení detailov.</p>
+
+                <div class="email-highlight">
+                    Týmto potvrdzujem, že <strong>nabídku prijímam</strong> a teším sa na začiatok našej spolupráce.
+                </div>
+
+                <p>Vážim si dôveru a priestor, ktorý mi dávate, a verím, že spoločne dokážeme posunúť Vitar Sport obchodne a celú skupinu Vitar digitálne k ďalšiemu rastu a úspechu.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══ ZHRNUTIE ═══ -->
+    <div class="section">
+        <div class="section-label">Výsledok mailovej výmeny</div>
+        <div class="section-title">Potvrdená štruktúra</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Zložka</th>
+                    <th>Forma</th>
+                    <th style="text-align: right;">Pôvodný dokument</th>
+                    <th style="text-align: right;">Po úprave (mail)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Základná mzda (VITAR s.r.o.)</td>
+                    <td>HPP</td>
+                    <td style="text-align: right;">90 000</td>
+                    <td style="text-align: right; font-weight: 700; color: var(--teal-light);">68 000</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Fakturácia (VITAR Sport)</td>
+                    <td>FA</td>
+                    <td style="text-align: right;">100 000</td>
+                    <td style="text-align: right; font-weight: 700; color: var(--teal-light);">140 000</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--white);">Variabilný bonus</td>
+                    <td>HPP + FA</td>
+                    <td style="text-align: right;">50 000</td>
+                    <td style="text-align: right; font-weight: 700;">50 000</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2"><strong>CELKOM</strong></td>
+                    <td style="text-align: right; font-size: 18px;"><strong>240 000</strong></td>
+                    <td style="text-align: right; font-size: 18px;"><strong style="color: var(--teal-light);">258 000</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="example-box" style="margin-top: 20px;">
+            <strong>Zmena base:</strong> 190 000 → 208 000 (+18 000 CZK/mesiac). Variabilný bonus zostal nezmenený. Zmena bola potvrdená Pavlou Poláškovou v maili, ale <strong>nebola spätne premietnutá do dokumentu s ponukou</strong> — ten stále ukazuje 240k.
+        </div>
+    </div>
+
+    <div class="footer">
+        Zdroj: Gmail korešpondencia júl 2025 · Účastníci: Juraj Giacko, Pavla Polášková, Nina Stránská, Vladimír Polášek, Tomáš Červinka
+    </div>
+
+</div>
+</div>
+
+<script>
+function switchTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    const tabs = document.querySelectorAll('.nav-tab');
+    if (tab === 'overview') tabs[0].classList.add('active');
+    else tabs[1].classList.add('active');
+    window.scrollTo(0, 0);
+}
+</script>
 
 </body>
 </html>
